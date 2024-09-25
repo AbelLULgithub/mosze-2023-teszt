@@ -4,24 +4,27 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS];  //hibás név (N_ELEMENTS)
-    std::cout << '1-100 ertekek duplazasa'  //"" (;hiányzik a végéről)
-    for (int i = 0;)  //hibás for ciklus
+    int *b = new int[N_ELEMENTS]; //hibás név (N_ELEMENTS)   ... javítva
+    std::cout << "1-100 ertekek duplazasa"; //"" (;hiányzik a végéről)  ... javítva
+    for (int i = 0; i < N_ELEMENTS; i++) //hibás for ciklus   ... javítva
     {
         b[i] = i * 2;
     }
-    for (int i = 0; i; i++)  // hibás for ciklus 
+    for (int i = 0; i < N_ELEMENTS; i++) // hibás for ciklus ... javítva
     {
-        std::cout << "Ertek:"  // a b[i] és a ; hiányzik
+        std::cout << "Ertek: "<<b[i]<<std::endl; // a b[i] és a ; hiányzik  ... javítva
     }    
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag;  // nincs inicializálva
-    for (int i = 0; i < N_ELEMENTS, i++)
+    int atlag=0; // nincs inicializálva    ... javítva
+    for (int i = 0; i < N_ELEMENTS; i++) 
     {
-        atlag += b[i]  // ; hiányzik 
+        atlag += b[i]; // ; hiányzik    ... javítva
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
-                    // nincs memória felszabadítás (delete b) 
-    return 0;
-}
+    
+
+    delete [] b;    // nincs memória felszabadítás (delete b)    ... javítva
+    return 0; 
+}  
+
