@@ -23,9 +23,9 @@ int main()
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
-
-    std::cout<< "Bucsuházy Barnabás beleírt" << std::endl;
     
+    std::cout<< "Bucsuházy Barnabás beleírt" << std::endl;
+    std::cout << "Még egy kiírás pr miatt" << std::endl;
 
     delete [] b;    // nincs memória felszabadítás (delete b)    ... javítva
     return 0; 
